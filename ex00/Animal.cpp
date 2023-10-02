@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:26:10 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/02 14:06:31 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/02 18:43:04 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Animal & Animal::operator=(const Animal & copy) {
 }
 
 std::string Animal::getType(void) const {
-    // std::cout << "I'm a " << this->_type << std::endl;
     return(this->_type);
 }
 
