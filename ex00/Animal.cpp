@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:26:10 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/03 10:42:59 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/03 11:19:15 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal::Animal(const std::string & type) {
 
 Animal & Animal::operator=(const Animal & copy) {
     this->_type = copy._type;
-    std::cout << "Animal assignment operator called" << std::endl;
+    std::cout << "Animal copy assignment operator called" << std::endl;
     return (*this);
 }
 
