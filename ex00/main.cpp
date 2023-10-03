@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:34 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/02 18:06:19 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/03 11:16:51 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main() {
+int main(void)
+{
 	const Animal* meta = new Animal();
 	const Animal* i = new Cat();
 	const Animal* j = new Dog();
