@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:26:10 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/03 11:19:15 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/03 11:20:24 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ Animal::Animal(const Animal & copy) {
     std::cout << "Animal copy constructor called" << std::endl;
 }
 
-Animal::Animal(const std::string & type) {
-    this->_type = type;
-    std::cout << "Animal default (name) constructor called" << std::endl;
+Animal::Animal(const std::string & type) : _type(type) {
+    std::cout << "Animal default (type) constructor called" << std::endl;
 }
 
 Animal & Animal::operator=(const Animal & copy) {
