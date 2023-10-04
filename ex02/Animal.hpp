@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:36 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 17:23:03 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:09:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal {
 		Animal(const Animal & copy);
 		Animal & operator=(const Animal & copy);
 		std::string getType(void) const;
-		virtual void makeSound() = 0;
+		virtual void makeSound() const = 0;
 		virtual ~Animal();
 };
 #endif

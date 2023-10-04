@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:34 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 17:23:17 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:08:34 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int main(void)
 {
 	//  Animal* meta = new Animal();
-	Animal* i = new Cat();
-	Animal* j = new Dog();
+	const Animal* i = new Cat();
+	const Animal* j = new Dog();
 	// std::cout << meta->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:44 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 17:23:26 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:09:38 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog & Dog::operator=(const Dog & copy) {
     return (*this);
 }
 
-void Dog::makeSound() {
+void Dog::makeSound() const {
     std::cout << "this Dog is barking !!!" << std::endl;
 }
 

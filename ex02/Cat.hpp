@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:51 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 17:18:18 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:09:23 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal {
 		Cat();
 		Cat(const Cat & copy);
 		Cat & operator=(const Cat & copy);
-		void makeSound() ;
+		void makeSound() const;
 		~Cat();
 };
 #endif

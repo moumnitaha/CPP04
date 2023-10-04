@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:49 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 17:17:54 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:09:27 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat & Cat::operator=(const Cat & copy) {
     return (*this);
 }
 
-void Cat::makeSound() {
+void Cat::makeSound() const {
     std::cout << "this Cat is meowing !!!" << std::endl;
 }
 
