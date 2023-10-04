@@ -6,24 +6,24 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:49 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:14:26 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:21:01 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : AAnimal("Cat") {
     this->_brain = new Brain();
     std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat & copy) : Animal(copy) {
+Cat::Cat(const Cat & copy) : AAnimal(copy) {
     this->_brain = new Brain(*copy._brain);
     std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat & Cat::operator=(const Cat & copy) {
-    Animal::operator=(copy);
+    AAnimal::operator=(copy);
     std::cout << "Cat copy assignment operator called" << std::endl;
     return (*this);
 }

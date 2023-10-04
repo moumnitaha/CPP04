@@ -6,14 +6,14 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:08:37 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 14:20:44 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:21:39 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _BRAIN_HPP_
 # define _BRAIN_HPP_
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 class Brain {
 	private:

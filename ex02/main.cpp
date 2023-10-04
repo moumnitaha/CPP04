@@ -6,19 +6,19 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:34 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:08:34 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 18:22:37 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int main(void)
 {
-	//  Animal* meta = new Animal();
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
+	//  AAnimal* meta = new AAnimal();
+	const AAnimal* i = new Cat();
+	const AAnimal* j = new Dog();
 	// std::cout << meta->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
