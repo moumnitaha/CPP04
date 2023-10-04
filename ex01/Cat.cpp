@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:49 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 14:41:21 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/04 16:17:54 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Cat::Cat() : Animal("Cat") {
     this->_brain = new Brain();
-    this->_brain->setIdea(0, "CAT IDEA");
     std::cout << "Cat default constructor called" << std::endl;
 }
 
@@ -25,8 +24,7 @@ Cat::Cat(const Cat & copy) : Animal(copy) {
 
 Cat & Cat::operator=(const Cat & copy) {
     Animal::operator=(copy);
-    *this->_brain = *copy._brain;
-    std::cout << "-->Cat copy assignment operator called" << std::endl;
+    std::cout << "Cat copy assignment operator called" << std::endl;
     return (*this);
 }
 
@@ -35,8 +33,6 @@ void Cat::makeSound() const {
 }
 
 Cat::~Cat() {
-    std::cout << "LETS DESTROY" << std::endl;
-    this->_brain->getIdea(0);
     delete this->_brain;
     std::cout << "Cat destructor called" << std::endl;
 }
