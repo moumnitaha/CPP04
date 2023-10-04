@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 12:10:47 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:16:05 by tmoumni          ###   ########.fr       */
+/*   Created: 2023/10/04 11:08:37 by tmoumni           #+#    #+#             */
+/*   Updated: 2023/10/04 14:20:44 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_HPP_
-# define _DOG_HPP_
+#ifndef _BRAIN_HPP_
+# define _BRAIN_HPP_
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal {
+class Brain {
 	private:
-		Brain*	_brain;
-    public:
-		Dog();
-		Dog(const Dog & copy);
-		Dog & operator=(const Dog & copy);
-		void makeSound() const;
-		~Dog();
+		std::string _ideas[100];
+	public:
+		Brain();
+		Brain(const Brain & copy);
+		Brain & operator=(const Brain & copy);
+		void setIdea(const int & index, const std::string & idea);
+		void getIdea(const int & index);
+		~Brain();
 };
+
 #endif
