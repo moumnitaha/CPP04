@@ -6,19 +6,19 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 18:39:53 by tmoumni           #+#    #+#              #
-#    Updated: 2023/10/04 18:46:54 by tmoumni          ###   ########.fr        #
+#    Updated: 2023/10/05 12:47:45 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = AMateria
-HEADER = 
+HEADER = AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp IMateriaSource.hpp Ice.hpp MateriaSource.hpp
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 STD = -std=c++98
 RM = rm -rf
 
-SRCS = main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp ICharacter.cpp IMateriaSource.cpp Ice.cpp MateriaSource.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 
 all: $(NAME)
