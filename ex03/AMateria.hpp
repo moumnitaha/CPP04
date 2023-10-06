@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:47:52 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/05 12:50:43 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/06 15:50:44 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 class AMateria {
 	protected:
+		std::string _type;
 	public:
 		AMateria();
 		AMateria(const AMateria & copy);
