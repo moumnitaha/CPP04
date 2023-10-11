@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:47:20 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 17:17:08 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 18:49:14 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ MateriaSource & MateriaSource::operator=(const MateriaSource & copy) {
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
+	if (isLearnedMateria(m)) {
+		std::cout << "MATERIA ALREADY LEARNED!" << std::endl;
+		return ;
+	}
     for (int i = 0; i < 4; i++)
     {
         if (!_learned_materias[i] && m){
@@ -43,7 +47,7 @@ void MateriaSource::learnMateria(AMateria* m) {
 	if (m)
 		std::cout << "MATRIAS FULL" << std::endl;
 	else
-		std::cout << "Invalid AMateria" << std::endl;
+		std::cout << "INVALID MATERIA TO LEARN!" << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
@@ -59,7 +63,7 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 bool MateriaSource::isLearnedMateria(AMateria *m) {
     for (int i = 0; i < 4; i++)
     {
-        if (_learned_materias[i] == m)
+        if (m && _learned_materias[i] == m)
 			return true;
     }
     return false;

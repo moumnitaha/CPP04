@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:59 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 14:42:18 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 18:43:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Character : public ICharacter {
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
+		bool isEquipedMateria(AMateria *m);
 		~Character();
 };
 

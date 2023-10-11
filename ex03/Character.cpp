@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 18:07:50 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 18:50:40 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
+    if (isEquipedMateria(m)) {
+		std::cout << "MATERIA ALREADY EQUIPED!" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++) {
 		if (!_inventory[i] && m) {
 			_inventory[i] = m;
@@ -49,9 +53,9 @@ void Character::equip(AMateria* m) {
         }
 	}
     if (m)
-        std::cout << "MAteria is full" << std::endl;
-    else
-        std::cout << "MAteria is invalid" << std::endl;
+		std::cout << "MATRIAS FULL" << std::endl;
+	else
+		std::cout << "INVALID MATERIA TO EQUIP!" << std::endl;
 }
 
 void Character::unequip(int idx) {
@@ -74,6 +78,15 @@ void Character::use(int idx, ICharacter& target) {
         return;
     }
     std::cout << "INVALID MATERIA INDEX: " << idx << " TO USE!" << std::endl;
+}
+
+bool Character::isEquipedMateria(AMateria *m) {
+    for (int i = 0; i < 4; i++)
+    {
+        if (m && _inventory[i] == m)
+			return true;
+    }
+    return false;
 }
 
 Character::~Character() {
