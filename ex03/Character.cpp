@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 18:50:40 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 19:04:07 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,14 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-    if (idx >= 0 && idx < 4 && _inventory[idx])
+    if (idx >= 0 && idx < 4)
     {
-        std::cout << "UNEQUIPE: " << _inventory[idx]->getType() << " at: " << idx << std::endl;
-    	_inventory[idx] = NULL;
+        if (this->_inventory[idx]) {
+            std::cout << "UNEQUIPE: " << _inventory[idx]->getType() << " at: " << idx << std::endl;
+    	    _inventory[idx] = NULL;
+        }
+        else
+            std::cout << "MATERIA TO UNEQUIP INDEX: " << idx << " IS EMPTY!" << std::endl;
         return ;
     }
     std::cout << "INVALID MATERIA INDEX: " << idx << " TO UNEQUIP!" << std::endl;
@@ -74,7 +78,7 @@ void Character::use(int idx, ICharacter& target) {
 		if (this->_inventory[idx])
             this->_inventory[idx]->use(target);
         else
-            std::cout << "CAN'T USE " << target.getName() << " MATERIA" << std::endl;
+            std::cout << "MATERIA TO USE INDEX: " << idx << " IS EMPTY!" << std::endl;
         return;
     }
     std::cout << "INVALID MATERIA INDEX: " << idx << " TO USE!" << std::endl;

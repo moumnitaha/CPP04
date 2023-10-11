@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:46:12 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 18:56:06 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 19:06:04 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #include "IMateriaSource.hpp"
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
+
+void leaks(){
+    system("leaks AMateria");
+}
 
 int main(void) {
     IMateriaSource* src = new MateriaSource();
@@ -48,10 +52,13 @@ int main(void) {
 
     me->use(0, *bob);
     me->use(1, *bob);
+    std::cout<<std::endl << "-----USE AN INVALID MATERIA-----" <<std::endl;
+    me->use(3, *bob);
+    me->use(5, *bob);
 
     delete bob;
     delete me;
     delete src;
-    
+    atexit(leaks);
     return 0;
 }
