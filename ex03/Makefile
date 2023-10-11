@@ -6,7 +6,7 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 18:39:53 by tmoumni           #+#    #+#              #
-#    Updated: 2023/10/11 16:07:08 by tmoumni          ###   ########.fr        #
+#    Updated: 2023/10/11 17:40:18 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(STD) $(OBJS) -o $@
 
-%.o: %.cpp $(SRCS) $(HEADER)
+%.o: %.cpp $(HEADER)
 	$(CC) $(FLAGS) $(STD) -c $< -o $@
 
 clean:
