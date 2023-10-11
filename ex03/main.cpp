@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:46:12 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 16:09:06 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:28:22 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,28 @@
 #include "MateriaSource.hpp"
 
 int main(void) {
-    std::cout << "NOTHING IS HERE YET !" << std::endl;
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+
+    ICharacter* me = new Character("me");
+
+    AMateria* tmp;
+
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+
+    ICharacter* bob = new Character("bob");
+
+    me->use(0, *bob);
+    me->use(1, *bob);
+
+    delete bob;
+    delete me;
+    delete src;
+    
     return 0;
 }

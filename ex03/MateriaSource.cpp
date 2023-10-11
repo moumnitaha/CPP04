@@ -6,17 +6,17 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:47:20 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 15:35:59 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:17:08 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() : _materias() {
+MateriaSource::MateriaSource() : _learned_materias() {
     std::cout << "MateriaSource default constructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource(const MateriaSource & copy) : _materias() {
+MateriaSource::MateriaSource(const MateriaSource & copy) : _learned_materias() {
     this->operator=(copy);
     std::cout << "MateriaSource copy constructor called" << std::endl;
 }
@@ -24,18 +24,52 @@ MateriaSource::MateriaSource(const MateriaSource & copy) : _materias() {
 MateriaSource & MateriaSource::operator=(const MateriaSource & copy) {
     for (int i = 0; i < 4; i++)
     {
-    	if (copy._materias[i])
-			this->_materias[i] = copy._materias[i];
+    	if (copy._learned_materias[i])
+			this->_learned_materias[i] = copy._learned_materias[i];
     }
     std::cout << "MateriaSource assignment operator called" << std::endl;
 	return (*this);
 }
 
+void MateriaSource::learnMateria(AMateria* m) {
+    for (int i = 0; i < 4; i++)
+    {
+        if (!_learned_materias[i] && m){
+			_learned_materias[i] = m;
+			std::cout << "MAteria Learned at " << i << std::endl;
+			return ;
+		}
+    }
+	if (m)
+		std::cout << "MATRIAS FULL" << std::endl;
+	else
+		std::cout << "Invalid AMateria" << std::endl;
+}
+
+AMateria* MateriaSource::createMateria(std::string const & type) {
+    for (int i = 0; i < 4; i++)
+    {
+    	if (this->_learned_materias[i] && this->_learned_materias[i]->getType() == type)
+			return this->_learned_materias[i]->clone();
+    }
+	std::cout << "INVALID AMATERIA TYPE: " << type << std::endl;
+	return 0;
+}
+
+bool MateriaSource::isLearnedMateria(AMateria *m) {
+    for (int i = 0; i < 4; i++)
+    {
+        if (_learned_materias[i] == m)
+			return true;
+    }
+    return false;
+}
+
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < 4; i++)
     {
-    	if (this->_materias[i])
-			delete this->_materias[i];
+    	if (this->_learned_materias[i])
+			delete this->_learned_materias[i];
     }
     std::cout << "MateriaSource destructor called" << std::endl;
 }

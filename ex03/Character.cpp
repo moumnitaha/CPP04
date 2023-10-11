@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 15:59:05 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:27:59 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,16 @@ std::string const & Character::getName() const {
 
 void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
-		if (!_inventory[i])
+		if (!_inventory[i] && m) {
 			_inventory[i] = m;
+            std::cout << "EQUIPE: " << m->getType() << " at: " << i << std::endl;
+            return ;
+        }
 	}
+    if (m)
+        std::cout << "AMAteria if full" << std::endl;
+    else
+        std::cout << "AMAteria if invalid" << std::endl;
 }
 
 void Character::unequip(int idx) {
@@ -54,7 +61,12 @@ void Character::unequip(int idx) {
 
 void Character::use(int idx, ICharacter& target) {
 	if (idx >= 0 && idx < 4)
-		this->_inventory[idx]->use(target);
+    {
+		if (this->_inventory[idx])
+            this->_inventory[idx]->use(target);
+        else
+            std::cout << "CAN'T USE " << target.getName() << " MATERIA" << std::endl;
+    }
 }
 
 Character::~Character() {
