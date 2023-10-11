@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:40:12 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/06 14:44:21 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 12:27:48 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Ice : public AMateria {
 		Ice();
 		Ice(const Ice & copy);
 		Ice & operator=(const Ice & copy);
+		virtual AMateria* clone() const;
+		void use(ICharacter& target);
 		~Ice();
 };
 

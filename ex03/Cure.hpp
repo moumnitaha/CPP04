@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:41:16 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/06 14:44:14 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/11 12:23:49 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Cure : public AMateria {
 		Cure();
 		Cure(const Cure & copy);
 		Cure & operator=(const Cure & copy);
+		virtual AMateria *clone() const;
+		void use(ICharacter& target);
 		~Cure();
 };
 
