@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:47:20 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 18:49:14 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/14 18:37:00 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ MateriaSource & MateriaSource::operator=(const MateriaSource & copy) {
     for (int i = 0; i < 4; i++)
     {
     	if (copy._learned_materias[i])
-			this->_learned_materias[i] = copy._learned_materias[i];
+			this->_learned_materias[i] = copy._learned_materias[i]->clone();
     }
     std::cout << "MateriaSource assignment operator called" << std::endl;
 	return (*this);

@@ -6,18 +6,18 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:10:31 by tmoumni           #+#    #+#              #
-#    Updated: 2023/10/02 12:23:16 by tmoumni          ###   ########.fr        #
+#    Updated: 2023/10/14 18:03:21 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animal
-HEADER = Animal.hpp Cat.hpp Dog.hpp
+HEADER = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 STD = -std=c++98
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 RM = rm -rf
 

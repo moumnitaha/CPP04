@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/11 19:04:07 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/14 18:32:41 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Character & Character::operator=(const Character & copy) {
     for (int i = 0; i < 4; i++)
     {
         if (copy._inventory[i])
-            this->_inventory[i] = copy._inventory[i];
+            this->_inventory[i] = copy._inventory[i]->clone();
     }
     std::cout << "Character copy assignment called" << std::endl;
     return (*this);
