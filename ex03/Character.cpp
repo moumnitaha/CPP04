@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/14 18:32:41 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/14 18:59:43 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!_inventory[i] && m) {
 			_inventory[i] = m;
-            std::cout << "EQUIPE: " << m->getType() << " at: " << i << std::endl;
+            std::cout << "EQUIPE " << m->getType() << " AT INDEX: " << i << std::endl;
             return ;
         }
 	}

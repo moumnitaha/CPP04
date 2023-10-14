@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:47:20 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/14 18:37:00 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/14 18:58:31 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void MateriaSource::learnMateria(AMateria* m) {
     {
         if (!_learned_materias[i] && m){
 			_learned_materias[i] = m;
-			std::cout << "MAteria Learned at " << i << std::endl;
+			std::cout << "MATERIA LEARNED AT INDEX: " << i << std::endl;
 			return ;
 		}
     }
@@ -56,7 +56,7 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
     	if (this->_learned_materias[i] && this->_learned_materias[i]->getType() == type)
 			return this->_learned_materias[i]->clone();
     }
-	std::cout << "INVALID AMATERIA TYPE: " << type << std::endl;
+	std::cout << "INVALID MATERIA TYPE: " << type << std::endl;
 	return 0;
 }
 
