@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:44 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:21:20 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/18 17:06:49 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,26 @@ Dog::Dog() : AAnimal("Dog") {
 }
 
 Dog::Dog(const Dog & copy) : AAnimal(copy) {
-    this->_brain = new Brain(*copy._brain);
+    *this = copy;
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog & Dog::operator=(const Dog & copy) {
-    AAnimal::operator=(copy);
+    this->_brain = new Brain(*copy._brain);
     std::cout << "Dog copy assignment operator called" << std::endl;
     return (*this);
 }
 
 void Dog::makeSound() const {
     std::cout << "this Dog is barking !!!" << std::endl;
+}
+
+void Dog::getIdeas(const int & index) const {
+    this->_brain->getIdea(index);
+}
+
+void Dog::setIdeas(const int & index, const std::string & idea) {
+    this->_brain->setIdea(index, idea);
 }
 
 Dog::~Dog() {

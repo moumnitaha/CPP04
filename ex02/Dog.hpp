@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:47 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:22:47 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/18 17:06:52 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Dog : public AAnimal {
 		Dog(const Dog & copy);
 		Dog & operator=(const Dog & copy);
 		void makeSound() const;
+		void getIdeas(const int & index) const;
+		void setIdeas(const int & index, const std::string & idea);
 		~Dog();
 };
 #endif

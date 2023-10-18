@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:08:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 14:51:30 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/18 17:19:21 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ void Brain::setIdea(const int & index, const std::string & idea) {
 }
 
 void Brain::getIdea(const int & index) {
-    if (index >= 0 && index < 100)
-        std::cout << "THE IDEA: " << _ideas[index] << std::endl;
+    if (index >= 0 && index < 100){
+        std::cout << " -----------------------" << std::endl;
+        std::cout << "| THE IDEA: " << _ideas[index] << std::endl;
+        std::cout << " -----------------------" << std::endl;
+    }
 }
 
 Brain::~Brain() {

@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:51 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/04 18:22:49 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/18 17:06:43 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Cat : public AAnimal {
 		Cat();
 		Cat(const Cat & copy);
 		Cat & operator=(const Cat & copy);
-		void makeSound() const;
+		void makeSound() const ;
+		void getIdeas(const int & index) const;
+		void setIdeas(const int & index, const std::string & idea);
 		~Cat();
 };
 #endif
