@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:34 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/18 17:07:14 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/18 17:35:07 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
+# define NUMBER_OF_ANIMALS 4
+
 int main(void)
 {
+	Animal *Animals[NUMBER_OF_ANIMALS];
+	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
+	{
+		if (i < NUMBER_OF_ANIMALS / 2)
+			Animals[i] = new Dog();
+		else
+			Animals[i] = new Cat();
+	}
+	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
+	{
+		delete Animals[i];
+	}
 	{
 		std::cout << "-----Check deep copy of Cat class using copy constructor-----" << std::endl;
 		Cat *catA = new Cat();
@@ -42,6 +56,5 @@ int main(void)
 		catA->getIdeas(1);
 		delete catA;
 	}
-	
 	return 0;
 }
