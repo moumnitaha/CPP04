@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:46:12 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/14 18:46:10 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/19 12:56:53 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main(void) {
 
     std::cout<< std::endl << "-----EQUIPE THE SAME MATERIA-----" << std::endl;
     tmp = src->createMateria("cure");
+    me->equip(tmp);
     me->equip(tmp);
     me->equip(tmp);
     std::cout<< std::endl << "-----UNEQUIPE AN INVALID MATERIA-----" << std::endl;

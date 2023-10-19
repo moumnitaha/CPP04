@@ -6,11 +6,12 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:42:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/18 18:51:47 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/19 12:54:54 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 Character::Character() : _inventory() {
     std::cout << "Character default constructor called" << std::endl;
@@ -58,10 +59,12 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
+    MateriaSource source;
     if (idx >= 0 && idx < 4)
     {
         if (this->_inventory[idx]) {
             std::cout << "UNEQUIPE: " << _inventory[idx]->getType() << " at: " << idx << std::endl;
+            source.learnMateria(_inventory[idx]);
     	    _inventory[idx] = NULL;
         }
         else
