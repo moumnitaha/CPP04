@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:34 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/19 12:04:14 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/19 13:35:31 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ int main(void)
 	{
 		delete Animals[i];
 	}
-	std::cout << "-----Check deep copy of Cat class using assignment operator overload-----" << std::endl;
+	std::cout << "-----Check deep copy using Copy constructor-----" << std::endl;
 	{
-		Cat *catA = new Cat();
 		Cat *catB = new Cat();
-
 		catB->setIdeas(1, "Idea of catB");
-
-		*catA = *catB;
+		
+		Cat *catA = new Cat(*catB);
 
 		catB->getIdeas(1);
 		delete catB;
