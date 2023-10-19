@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:10:44 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/19 11:55:56 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/19 12:32:40 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Dog::Dog(const Dog & copy) : AAnimal(copy) {
 }
 
 Dog & Dog::operator=(const Dog & copy) {
-    AAnimal::operator=(copy);
     *this->_brain = *copy._brain;
     std::cout << "Dog copy assignment operator called" << std::endl;
     return (*this);
