@@ -6,13 +6,13 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:08:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/18 17:19:21 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:20:39 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain() {
+Brain::Brain() : _ideas() {
     std::cout << "Brain constructor called" << std::endl;
 }
 
@@ -33,14 +33,18 @@ Brain & Brain::operator=(const Brain & copy) {
 void Brain::setIdea(const int & index, const std::string & idea) {
     if (index >= 0 && index < 100)
         _ideas[index] = idea;
+    else
+        std::cout << "Index out of range" << std::endl;
 }
 
 void Brain::getIdea(const int & index) {
-    if (index >= 0 && index < 100){
+    if (index >= 0 && index < 100) {
         std::cout << " -----------------------" << std::endl;
         std::cout << "| THE IDEA: " << _ideas[index] << std::endl;
         std::cout << " -----------------------" << std::endl;
     }
+    else
+        std::cout << "Index out of range" << std::endl;
 }
 
 Brain::~Brain() {

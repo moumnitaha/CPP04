@@ -22,7 +22,7 @@ AAnimal::AAnimal(const AAnimal & copy) {
 }
 
 AAnimal::AAnimal(const std::string & type) : _type(type) {
-    std::cout << "AAnimal default (type) constructor called" << std::endl;
+    std::cout << "AAnimal Parameterized constructor called" << std::endl;
 }
 
 AAnimal & AAnimal::operator=(const AAnimal & copy) {
