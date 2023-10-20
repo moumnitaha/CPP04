@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:46:12 by tmoumni           #+#    #+#             */
-/*   Updated: 2023/10/19 12:56:53 by tmoumni          ###   ########.fr       */
+/*   Updated: 2023/10/20 13:00:11 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-int main(void) {
+int main(void)
+{
     IMateriaSource* src = new MateriaSource();
     AMateria *ice = new Ice();
     std::cout<< std::endl << "-----LEARN MATERIA-----" << std::endl;
@@ -43,8 +44,12 @@ int main(void) {
     me->equip(tmp);
     me->equip(tmp);
     me->equip(tmp);
+    me->equip(tmp);
+    me->unequip(3);
+
     std::cout<< std::endl << "-----UNEQUIPE AN INVALID MATERIA-----" << std::endl;
     me->unequip(3);
+    me->unequip(5);
 
     ICharacter* bob = new Character("bob");
 
